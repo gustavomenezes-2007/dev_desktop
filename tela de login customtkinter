@@ -1,0 +1,31 @@
+import customtkinter as ctk
+from tkinter import messagebox
+
+# CONFIGURAR O TEMA
+ctk.set_appearance_mode('dark')
+ctk.set_default_color_theme('blue')
+
+# JANELA PRINCIPAL
+root = ctk.CTk()
+root.title('Tela de Login')
+root.geometry('450x350')
+
+# CAMPO DO USUÁRIO
+luser = ctk.CTkLabel(root, text='USUÁRIO').pack(pady=5)
+euser = ctk.CTkEntry(root, placeholder_text='digite').pack(pady=5)
+
+# CAMPO DA SENHA
+lpass = ctk.CTkLabel(root, text='SENHA').pack(pady=5)
+epass = ctk.CTkEntry(root, placeholder_text='digite').pack(pady=5)
+
+# FRAME BOTÕES LADO A LADO
+frame_botoes = ctk.CTkFrame(root)
+frame_botoes.pack(pady=20)
+
+btn_entrar = ctk.CTkButton(frame_botoes, text='ENTRAR')
+btn_entrar.grid(row=0, column=0, padx=10)
+
+btn_cancela = ctk.CTkButton(frame_botoes, text='CANCELAR', fg_color='red', hover_color='darkred')
+btn_cancela.grid(row=0, column=1, padx=10)
+
+root.mainloop()
